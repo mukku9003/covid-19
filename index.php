@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Covid-19</title>
     <?php include 'link/links.php'; ?>
     <?php include 'css/style.php'; ?>
     <?php include 'dbcon.php'; ?>
+
+        
 
 </head>
 <body onload="fetch()">
     <nav class="navbar navbar-expand-lg nav_style bg-light p-3">
         <a class="navbar-brand pl-5" href="#">Covid-19</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" style="color: red;"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background: #9d9f0030;">
+            <span class="navbar-toggler-icon" style="background: #7a66cf;"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,6 +33,14 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="#preventid">prevention</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="coronamap.html">Corona Map</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="indiadaywiselive.php">India Daywise Live</a>
                 </li>
 
                 <li class="nav-item">
@@ -57,7 +67,7 @@
 
             <div class="col-lg-7 col-md-7 col-12 order-lg-1 order-1">
                 <div class="rightside  w-100 h-100 d-flex justify-content-center align-items-center">
-                    <h1>Let's stay Safe & Fight Together Against C<span class="corona_rot"><img src="images/corona.png" width="80" height="80"></span>vid-19 </h1>
+                    <h1>Let's stay Safe & Fight Together Against C<span class="corona_rot"><img src="images/corona-min.png" width="80" height="80"></span>vid-19 </h1>
                 </div>
             </div>
         </div>
@@ -117,7 +127,7 @@
 
         <div class="row pt-5">
             <div class="col-lg-5 col-md-6 col-12 ml-5 about_res">
-            <img src="images/corona.png" class="img-fluid" width="300" height="50" >
+            <img src="images/corona.jpg" class="img-fluid"  >
             </div>
 
             <div class="col-lg-6 col-md-6 col-12">
@@ -294,7 +304,7 @@
 
         <div class="container-fluid sub_section  pt-5 pb-5 " id="contactid"> 
             <div class="section_header text-center mb-5 mt-4">
-                <h1>6 Steps Prevention Against Coronavirus</h1>
+                <h1>Contact Us</h1>
             </div>
 
             <div class="container" > 
