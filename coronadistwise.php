@@ -34,14 +34,6 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="coronamap.html">Corona Map</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="indiadaywiselive.php">India Daywise Live</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" href="indiacoronalive.php">India Corona Live</a>
                 </li>
 
@@ -64,48 +56,48 @@
 
     <section class="corona_update container-fluid" >
         <div class="mb-3 pt-5 pb-5 ">
-            <h3 class="text-uppercase text-center">Covid-19 Live Updates Of The INDIA Daywise Data</h3>
+            <h3 class="text-uppercase text-center">Covid-19 Live Updates Of The INDIA</h3>
         </div>
 
         <div class="table-responsive" >
-            <table class="table text-center" id="tbl">
-
-            <?php 
-
-                $jsons_datas = file_get_contents('https://api.covid19india.org/data.json');
-                $daydata = json_decode($jsons_datas, true);
-                $totalrecords = count($daydata['cases_time_series']);
-
-                $i = 0;
-
-                while($i < $totalrecords){
-            ?>
+            <table class="table table-bordered table-striped text-center" id="tbval">
                 <tr>
-                    <th class="text-left">Date & Month</th>
-                    <th  colspan="6"></th>
+                    <th class="text-capitalize">State</th>
+                    <th class="text-capitalize">Confirmed</th>
+                    <th class="text-capitalize">Active</th>
+                    <th class="text-capitalize">Deceased</th>
+                    <th class="text-capitalize">Recovered</th>
                 </tr>
-                <tr>
-                    <td colspan="6" class="text-left"><?php echo $daydata['cases_time_series'][$i]['date'] ?></td>
-                </tr>
-                <tr class="text-capitalize text-white">
-                    <th style="color:#000;background: #008aff">Total Confirmed</th>
-                    <th style="color:#000;background: #c02424;">Daily Confirmed</th>
-                    <th style="color:#000;background: #a7a700;">Daily Cases</th>
-                    <th style="color:#000;background: #036f03;">Total Recovered</th>
-                    <th style="color:#000;background: #ff2f2f;">Total Cases</th>
-                </tr>
-                <tr class="mb-5">
-                    <td style="color:#000;background: #008aff"><?php echo $daydata['cases_time_series'][$i]['totalconfirmed'] . "<br>";?></td>
-                    <td style="color:#000;background: #c02424;"><?php echo $daydata['cases_time_series'][$i]['dailyconfirmed'] . "<br>";?></td>
-                    <td style="color:#000;background: #a7a700;"><?php echo $daydata['cases_time_series'][$i]['dailyrecovered'] . "<br>";?></td>
-                    <td style="color:#000;background: #036f03;"><?php echo $daydata['cases_time_series'][$i]['totalrecovered'] . "<br>";?></td>
-                    <td style="color:#000;background: #ff2f2f;"><?php echo $daydata['cases_time_series'][$i]['totaldeceased'] . "<br>";?></td>
-                </tr>
-                <?php
-                    $i++;
-                }
-                ?>
-                
+
+                <?php 
+                    $data = file_get_contents('https://api.covid19india.org/state_district_wise.json');
+                    $coronadatas = json_decode($data, true);
+                    foreach($coronadatas as $key => $value){ ?>
+                       <tr class="col-sm-6" style="background-color: red;color: white; font-size: 20px;">
+                            <td ><?php echo $key . "<br>";?></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                       </tr>
+                       
+                       <?php  
+                            foreach($value['districtData'] as $dkey => $dvalue){  ?>
+                                
+                            <tr>
+                                <td><?php echo $dkey . "<br>";?></td>
+                                <td><?php echo $dvalue['confirmed'] . "<br>";?></td>
+                                <td><?php echo $dvalue['active'] . "<br>";?></td>
+                                <td><?php echo $dvalue['deceased'] . "<br>";?></td>
+                                <td><?php echo $dvalue['recovered'] . "<br>";?></td>
+
+                            </tr>
+                            <?php 
+
+                            }
+
+                        }
+                     ?>
             </table>
         </div>
     </section>

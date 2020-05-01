@@ -48,6 +48,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="coronadistwise.php">India District Wise</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="#contactid">Contact</a>
                 </li>
                 
