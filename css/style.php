@@ -124,4 +124,111 @@ html{
         margin-left: 0!important;
     }
 }
+
+.loader {
+	  position: fixed;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  z-index: 99;
+	  background: url() 50% 50% no-repeat rgb(249,249,249);
+  }
+ 
+
+  	.loader-container {
+		height: 100%;
+		margin: 0;
+		background: #ccc;
+		color: #666;
+		font-family: open sans;
+		padding: 0;
+  	}
+
+
+  .preloader {
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	position: relative;
+  }
+  
+  .description {
+	position: absolute;
+	bottom: 10px;
+	left: 12px;
+  }
+  
+  .loader-container {
+	cursor: default;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  
+  
+  .preloader-dots {
+	height: 100px;
+	width: 200px;
+  }
+  
+  .preloader-dots .dot {
+	display: inline-block;
+	
+	background: #f16529;
+	height: 28px;
+	width: 28px;
+	opacity: 0.3;
+	border-radius: 50%;
+	animation: moveit 1.8s infinite;
+
+  }
+  
+  .dot:nth-child(2) {
+	animation-delay: .15s;
+	background: #c2430c;
+  }
+  
+  .dot:nth-child(3) {
+	animation-delay: .3s;
+	background: black;
+  }
+  
+  .dot:nth-child(4) {
+	animation-delay: .45s;
+	background: green;
+  }
+  
+  .dot:nth-child(5) {
+	animation-delay: .6s;
+	background: blue;
+  }
+  
+  @keyframes moveit {
+	0% {
+	  transform: translateY(0px);
+	}
+	35% {
+	  transform: translateY(0px);
+	  opacity: 0.3;
+	}
+	50% {
+	  transform: translateY(-20px);
+	  opacity: 0.8;
+	}
+	70% {
+	  transform: translateY(3px);
+	  opacity: 0.8;
+	}
+	85% {
+	  transform: translateY(-3px);
+	}
+  }
+  
+
 </style>

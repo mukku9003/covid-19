@@ -12,6 +12,19 @@
 
 </head>
 <body onload="fetch()">
+    <div class='loader'>
+        <div class='loader-container'>
+            <div class='preloader'>
+                <div class='preloader-dots'>
+                    <div class='dot'></div>
+                    <div class='dot'></div>
+                    <div class='dot'></div>
+                    <div class='dot'></div>
+                    <div class='dot'></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg nav_style bg-light p-3">
         <a class="navbar-brand pl-5" href="#">Covid-19</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background: #9d9f0030;">
@@ -380,6 +393,10 @@
 
     <script type="text/javascript">
 
+    // $(window).load(function() {
+	// 	$(".loader").fadeOut(1000);
+	// });
+
     $('.count').counterUp({
         delay: 10,
         time:3000
@@ -450,7 +467,9 @@
                 }
             
             )
+            $(".loader").fadeOut(1000);
         }
+        
     </script>   
 </body>
 </html>

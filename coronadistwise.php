@@ -97,6 +97,10 @@
                             }
 
                         }
+
+                        // echo'<pre'>;
+                        // print_r($coronadatas);
+                        // exit;
                      ?>
             </table>
         </div>
